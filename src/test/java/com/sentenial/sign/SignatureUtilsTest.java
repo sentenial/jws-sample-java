@@ -1,16 +1,9 @@
 package com.sentenial.sign;
 
-import com.nimbusds.jose.JWSAlgorithm;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.cert.Certificate;
-import java.security.cert.CertificateException;
 import java.security.interfaces.RSAPrivateKey;
-import java.security.spec.InvalidKeySpecException;
 
 /**
  * Note the signature is detached. The exact request body that goes out on the wire needs to be the payload we sign here.
