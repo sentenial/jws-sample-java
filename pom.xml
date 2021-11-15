@@ -45,7 +45,7 @@
 
 
 
-        <!-- Just used for the signature validation -->
+        <!-- Just used for the signature validation
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
@@ -60,7 +60,7 @@
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcpkix-jdk15on</artifactId>
             <version>1.56</version>
-        </dependency>
+        </dependency> -->
 
     </dependencies>
 
@@ -71,7 +71,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <release>11</release>  <!--or <release>10</release>-->
+                    <release>11</release>
                 </configuration>
             </plugin>
         </plugins>

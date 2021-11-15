@@ -23,11 +23,10 @@ public class SignatureUtilsTest {
     public void testSignature() throws Exception {
 
         String expectedSignture="ewogICJhbGciOiAiUlMyNTYiLAogICJraWQiOiAiMTMzNzQ3MTQxMjU1IiwKICAiaWF0IjogMTAsCiAgImlzcyI6ICJDPUdCLCBMPUxvbmRvbiwgT1U9TnVhcGF5IEFQSSwgTz1OdWFwYXksIENOPXlib3F5YXk5MnEiLAogICJiNjQiOiBmYWxzZSwKICAiY3JpdCI6IFsKICAgICJpYXQiLAogICAgImlzcyIsCiAgICAiYjY0IgogIF0KfQ..cC8RSP8H2mhO4KaXLRAecAWXhJKCsxEGZLdy96uNLwhD-ZdScIEHWqE60IqYQfPXRx3FEEl25hvJn9SexegHo7k7f13y7-qwtno_e2uCzSAPKw9ColknJtaQHMns4EoiUC1rC1WjFZqCQaNEC7uc1CG3mToX1JwPsuDCqp9V8-FcjUfloi5dN_1SrKkyAoBu80DHtVe8PGJ3-MgYZqOiVIS4aSOv9u-7hp-fRXzqZbXHnoXpVRLDckEP_sdYi18i6mBtf7QPupQNzvTGIEppZdp2WQVWkInqv3Dw61I8A5-qo0WPhiuVuhsT2Ookic9i1Gnj-VSBoj8w7WVDAuIRsg";
-        PrivateKey key = SignatureUtils.loadTestPrivateKey();
+        RSAPrivateKey key = SignatureUtils.loadTestPrivateKey();
         //simple test payload
         String payload = "{}";
-        String[] crit = new String [] {"iat","iss","b64"};
-        String signature = SignatureUtils.createSignature((RSAPrivateKey)key, JWSAlgorithm.RS256, payload, "133747141255", false, 10, "C=GB, L=London, OU=Nuapay API, O=Nuapay, CN=yboqyay92q",  crit);
+        String signature = SignatureUtils.createSignature(key, payload, "133747141255", 10, "C=GB, L=London, OU=Nuapay API, O=Nuapay, CN=yboqyay92q");
         Assert.assertEquals(expectedSignture,signature);
         System.out.println("signature " + signature);
     }
